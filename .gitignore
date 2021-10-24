@@ -1,2 +1,15 @@
-.terraform
-.terraform.lock.hcl
+*sh
+*
+!secrets.enc.yml
+!secrets.enc.yaml
+!secrets.hcl
+!secrets.enc.hcl
+!terragrunt.hcl
+!deployment/**/terragrunt.hcl
+!modules/**
+.idea
+!*/
+.terragrunt-cache
+!.gitignore
+!README.md
+!*.yaml
