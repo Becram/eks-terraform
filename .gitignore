@@ -7,6 +7,7 @@
 !terragrunt.hcl
 !deployment/**/terragrunt.hcl
 !modules/**
+!deployment/**/root.hcl
 .idea
 !*/
 .terragrunt-cache
