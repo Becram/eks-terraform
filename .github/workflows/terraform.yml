@@ -23,6 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: ${{ env.tf_version }}
         terraform_wrapper: false
@@ -34,6 +35,8 @@ jobs:
       run: |
         ls
         terragrunt --version
+        terraform --version
+
 
     # - name: Setup infra modules deploy key
     #   run: |
