@@ -18,8 +18,14 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: "us-east-1"
+      tf_version: '1.0.6'
+      tg_version: 'v0.31.11'
     steps:
     - uses: actions/checkout@v1
+    - name: Setup Terraform
+      with:
+        terraform_version: ${{ env.tf_version }}
+        terraform_wrapper: false
     - name: Setup Terragrunt
       uses: autero1/action-terragrunt@v1.1.0
       with:
