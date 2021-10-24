@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - add-eks
-    paths:
-      - "production/**"
+    # paths:
+    #   - "deployment/**"
 
 defaults:
   run:
