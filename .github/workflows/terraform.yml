@@ -21,7 +21,7 @@ jobs:
       tf_version: '1.0.6'
       tg_version: 'v0.31.11'
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
