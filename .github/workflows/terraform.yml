@@ -17,7 +17,7 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
-      AWS_DEFAULT_REGION: us-east-1
+      AWS_DEFAULT_REGION: "us-east-1"
     steps:
     - uses: actions/checkout@v1
     - name: Setup Terragrunt
@@ -25,7 +25,9 @@ jobs:
       with:
         terragrunt_version: 0.31.8
     - name: Interact with Terragrunt
-      run: terragrunt --version
+      run: |
+        ls
+        terragrunt --version
 
     # - name: Setup infra modules deploy key
     #   run: |
