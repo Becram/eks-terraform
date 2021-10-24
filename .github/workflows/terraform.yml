@@ -20,12 +20,12 @@ jobs:
       AWS_DEFAULT_REGION: us-east-1
     steps:
     - uses: actions/checkout@v1
-    - name: Install Terraform and Terragrunt
-      run: |
-        brew tap rocketinsights/tgenv
-        brew install tfenv tgenv
-        tfenv install
-        tgenv install
+    - name: Setup Terragrunt
+      uses: autero1/action-terragrunt@v1.1.0
+      with:
+        terragrunt_version: 0.31.8
+    - name: Interact with Terragrunt
+      run: terragrunt --version
 
     # - name: Setup infra modules deploy key
     #   run: |
