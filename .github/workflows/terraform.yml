@@ -21,34 +21,27 @@ jobs:
       tf_version: '1.0.6'
       tg_version: 'v0.31.11'
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_version: ${{ env.tf_version }}
-        terraform_wrapper: false
-    - name: Setup Terragrunt
-      uses: autero1/action-terragrunt@v1.1.0
-      with:
-        terragrunt_version: 0.31.8
-    - name: Interact with Terragrunt
-      run: |
-        ls
-        terragrunt --version
-        terraform --version
-
-
-    # - name: Setup infra modules deploy key
-    #   run: |
-    #     mkdir ~/.ssh
-    #     echo "${{ secrets.INFRA_MODULES_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-    #     chmod 600 ~/.ssh/id_rsa
-    #     ssh-keyscan -t rsa github.com
-
-    - name: Terragrunt plan-all
-      run: |
-        terragrunt run-all plan
-
-    # - name: Terragrunt apply-all
-    #   run: |
-    #     terragrunt run-all apply --terragrunt-non-interactive
+      - uses: actions/checkout@v1
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: ${{ env.tf_version }}
+          terraform_wrapper: false
+      - name: Setup Terragrunt
+        uses: autero1/action-terragrunt@v1.1.0
+        with:
+          terragrunt_version: 0.31.8
+      - name: Interact with Terragrunt
+        run: |
+          ls
+          terragrunt --version
+          terraform --version
+        
+      - name: Terragrunt plan-all
+        run: |
+          terragrunt run-all plan
+        
+      # - name: Terragrunt apply-all
+      #   run: |
+      #     terragrunt run-all apply --terragrunt-non-interactive
+        
