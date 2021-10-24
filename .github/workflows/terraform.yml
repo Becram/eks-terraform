@@ -7,16 +7,16 @@ on:
     # paths:
     #   - "deployment/**"
 
-defaults:
-  run:
-    working-directory: production
+# defaults:
+#   run:
+#     working-directory: d
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
-      # AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: us-east-1
       tf_version: 1.0.6
       tg_version: v0.31.11
