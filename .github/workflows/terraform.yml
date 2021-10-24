@@ -7,9 +7,9 @@ on:
     # paths:
     #   - "deployment/**"
 
-# defaults:
-#   run:
-#     working-directory: d
+defaults:
+  run:
+    working-directory: deployment
 
 jobs:
   build:
