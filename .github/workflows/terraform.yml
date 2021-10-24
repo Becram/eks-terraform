@@ -9,10 +9,10 @@ on:
 
 defaults:
   run:
-    working-directory: deployment
+    working-directory: deployment/production
 
 jobs:
-  build:
+  Plan:
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
