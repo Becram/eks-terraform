@@ -42,7 +42,7 @@ jobs:
 
       - name: Terragrunt plan-all
         run: |
-          terragrunt run-all plan
+          terragrunt plan-all -out=plan
 
       # - name: Terragrunt apply-all
       #   run: |
