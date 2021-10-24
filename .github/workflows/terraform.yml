@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - add-eks
-    paths:
-      - "deployment/**"
+    # paths:
+    #   - "deployment/**"
 
 defaults:
   run:
@@ -36,12 +36,11 @@ jobs:
           ls
           terragrunt --version
           terraform --version
-        
+
       - name: Terragrunt plan-all
         run: |
           terragrunt run-all plan
-        
+
       # - name: Terragrunt apply-all
       #   run: |
       #     terragrunt run-all apply --terragrunt-non-interactive
-        
